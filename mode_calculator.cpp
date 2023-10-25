@@ -1,21 +1,19 @@
 #include "mode_calculator.h"
 
-ModeCalculator::ModeCalculator(const std::vector<float>& data) {
-    dataset = data;
+ModeCalculator::ModeCalculator() {
+    maxFrequency = 0;
+    mode = 0;
 }
 
-float ModeCalculator::calculateMode() {
-    std::map<float, int> frequency;
-    float mode = dataset[0];
-    int maxFrequency = 1;
-
-    for (const float& value : dataset) {
-        frequency[value]++;
-        if (frequency[value] > maxFrequency) {
-            maxFrequency = frequency[value];
-            mode = value;
+void ModeCalculator::handleValue(float &val) {
+        frequency[val]++;
+        if (frequency[val] > maxFrequency) {
+                maxFrequency = frequency[val];
+                mode = val;
         }
-    }
+}
 
+float ModeCalculator::getResult() {
     return mode;
 }
+

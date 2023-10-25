@@ -6,11 +6,14 @@
 
 class ModeCalculator {
 public:
-    ModeCalculator(const std::vector<float>& data);  // Constructor
-    float calculateMode();  // Calculate the mode
+    ModeCalculator();  // Constructor
+    void handleValue(float &val);
+    float getResult();
 
 private:
-    std::vector<float> dataset;
+    std::map<float, int> frequency;
+    int maxFrequency;
+    float mode;
 };
 
 #endif // MODE_CALCULATOR_H

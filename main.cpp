@@ -4,14 +4,13 @@
 #include "mode_calculator.h"
 
 int main() {
-    std::vector<float> data;
+    ModeCalculator calculator;
     float val;
     while(std::cin >> val) {
-        data.push_back(val);
+        calculator.handleValue(val);
     }
 
-    ModeCalculator calculator(data);
-    float mode = calculator.calculateMode();
+    float mode = calculator.getResult();
 
     std::cout << "The mode is: " << mode << std::endl;
 
