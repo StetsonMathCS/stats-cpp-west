@@ -1,27 +1,19 @@
 #include <iostream>
-#include "stats_min.h"
-using namespace std;
+#include <vector>
+#include <iterator>
+#include "mode_calculator.h"
 
 int main() {
-
-    stats_min min_finder;
-    double val;
-    while(cin >> val) {
-        min_finder.add(val);
+    std::vector<float> data;
+    float val;
+    while(std::cin >> val) {
+        data.push_back(val);
     }
-    cout << "min: " << min_finder.result() << endl;
+
+    ModeCalculator calculator(data);
+    float mode = calculator.calculateMode();
+
+    std::cout << "The mode is: " << mode << std::endl;
+
     return 0;
 }
-
-// our code will calculate:
-// - min
-// - max
-// - mean
-// - median
-// - mode
-// - standard deviation
-// - variance
-// - range
-// - sum
-// - count
-
