@@ -7,8 +7,8 @@ using namespace std;
 
 class meanCalc {
 public:
-    meanCalc();
-    double calculateMean(vector<double> values);
+	meanCalc();
+	double calculateMean(vector<double> values);
 };
 
 #endif

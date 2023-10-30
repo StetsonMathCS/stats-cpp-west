@@ -1,16 +1,16 @@
+#include "stats_mean.h"
 #include <iostream>
 #include <vector>
-#include "stats_sum.h"
 using namespace std;
 
 int main() {
-	double val;
-	vector <double> data;
-	while (cin >> val) {
-		data.push_back(val);
-	}
-	stats_sum sumer;
-	double s = sumer.compute_sum(data);
-	cout << "sum: " << s << endl;
+	meanCalc calculator;
+	
+	vector<double> values = {1.0, 2.0, 3.0, 4.0, 10.0};
 
+	double mean = calculator.calculateMean(values);
+
+	cout << "Mean: " << mean << endl;
+
+	return 0;
 }
