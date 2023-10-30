@@ -1,27 +1,20 @@
 #include <iostream>
-#include "stats_min.h"
-using namespace std;
+#include "mean_calculator.h"
 
 int main() {
-
-    stats_min min_finder;
-    double val;
-    while(cin >> val) {
-        min_finder.add(val);
+    // create the mean calculator
+    MeanCalculator meanCalculator = MeanCalculator();
+    float val;
+    // get the values from the user
+    while (std::cin >> val) {
+        // handle the value
+        meanCalculator.handleValue(val);
     }
-    cout << "min: " << min_finder.result() << endl;
+    // print the result
+    std::cout << meanCalculator.getResult() << std::endl;
     return 0;
 }
-
-// our code will calculate:
-// - min
-// - max
-// - mean
-// - median
-// - mode
-// - standard deviation
-// - variance
-// - range
-// - sum
-// - count
-
+// terminal command to compile this file
+// g++ -std=c++11 main.cpp mean_calculator.cpp -o main
+// terminal command to pipe a txt file into the program and run it
+// cat data.txt | ./main
