@@ -1,12 +1,11 @@
-#include "stats_sum_h"
+// this file is the file that actually provides the code for the functions in the class
 
-double stats_sum::compute_sum(vector<double> data) {
-	double s = 0.0
-		for (int i = 0; i < data.size(), i++) {
-			s += data [i];
-		}
+#include "stats_sum.h"
+#include <vector>
+double stats_sum::compute_sum(vector <double> data) {
+	double s = 0.0;
+	for (int i =0; i < data.size(); i++) {
+		s += data[i];
+	}
 	return s;
 }
-
-
-

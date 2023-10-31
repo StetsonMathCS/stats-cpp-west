@@ -14,4 +14,3 @@ double stats_min::compute_min(const std::vector<double>& data) {
     }
     return min_val;
 }
-
